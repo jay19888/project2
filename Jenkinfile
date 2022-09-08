@@ -4,7 +4,7 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '5'))
     }
     parameters {
-        choice (name:CHOICE, choices:['1','2','3'], description: 'choose 1 to run job1 and job2')
+        choice (name:'CHOICE', choices:['1','2','3'], description: 'choose 1 to run job1 and job2')
     }
     stages {
         stage ('parallel'){
