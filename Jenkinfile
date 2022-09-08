@@ -1,7 +1,7 @@
 pipeline {
     agent any
     options {
-        discardBuilds(logRotator(numToKeepStr: '5'))
+        buildDiscarder(logRotator(numToKeepStr: '5'))
     }
     parameters {
         choice (name:CHOICE, choices:['1','2','3'], description: 'choose 1 to run job1 and job2')
