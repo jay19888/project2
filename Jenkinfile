@@ -9,11 +9,11 @@ pipeline {
     stages {
         stage ('parallel'){
             parallel{
-                when{
-                    expression {
-                        $CHOICE == '1'            
-                    }
-                }
+                // when{
+                //     expression {
+                //        $CHOICE == '1'            
+                //    }
+                //}
                 stage('job1'){
                     steps {
                         sleep 30
@@ -30,6 +30,8 @@ pipeline {
         }
     }
     post {
-        cleanWs()
+        always {
+            cleanWs()
+        }
     }
 }
