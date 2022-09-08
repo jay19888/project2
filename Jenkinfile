@@ -6,7 +6,7 @@ pipeline {
         disableConcurrentBuilds()
     }
     parameters {
-        choice (name:'CHOICE', choices:['1','2','3'], description: 'choose 1 to run job1 and job2')
+        choice (name:'CHOICE', choices:['one','two','three'], description: 'choose 1 to run job1 and job2')
         booleanParam (name: 'toggle', defaultValue: true)
     }
     stages {
@@ -15,7 +15,7 @@ pipeline {
                 stage('job1'){
                     when{
                         expression {
-                            $CHOICE == '1'            
+                            params.CHOICE == '1'          
                         }
                     }
                     steps {
