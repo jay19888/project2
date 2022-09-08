@@ -15,7 +15,7 @@ pipeline {
                 stage('job1'){
                     when{
                         expression {
-                            params.CHOICE == '1'          
+                            params.CHOICE == 'one'          
                         }
                     }
                     steps {
